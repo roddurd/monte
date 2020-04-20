@@ -2,8 +2,8 @@ import math, numpy, random
 
 def estimate_integral(func, a, b):
     samples = 100
-    ys = [(b-a)*func(*math.random()) for s in samples]
-    return ys.mean()
+    ys = [(b-a)*func(random.random()) for s in range(samples)]
+    return sum(ys) / len(ys)
 
 def func1(x):
     return math.exp(x+x**2)
